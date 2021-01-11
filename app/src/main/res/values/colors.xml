@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#40becb</color>
+    <color name="colorPrimaryDark">#2fabba</color>
+    <color name="colorAccent">#ef4567</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorGreen">#228B22</color>
+    <color name="colorAmber">#FFBF00</color>
+
+    <color name="white">#ffffff</color>
+    <color name="text_hint">#88ffffff</color>
+    <color name="login_btn_back_color">#0b3c98</color>
+    <color name="login_btn_pressed_back_color">#0a2b87</color>
+    <color name="signup_btn_back_color">#2d91ec</color>
+    <color name="signup_btn_pressed_back_color">#1c80cb</color>
+    <color name="text_hint1">#aaa</color>
+    <color name="disable_color">#888</color>
+    <color name="rating_bar_color">#ccaa00</color>
+    <color name="tab_color">#CFFFD4</color>
+    <color name="fav_color">#98B7FF</color>
+    <color name="green">#73c274</color>
+
+
+</resources>

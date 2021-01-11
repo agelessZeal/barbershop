@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.odelan.qwork.ui.activity.main.barber.BarberProfileActivity">
+
+    <!-- Top Bar -->
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/view_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:visibility="visible" />
+
+    <!-- Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_bar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/photoIV"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/back_thumb"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="0dp" />
+
+                <EditText
+                    android:id="@+id/usernameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:hint="Barber Name"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/phoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="Phone Number"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/birthdayET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:focusable="false"
+                    android:hint="Birthday"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/descriptionET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:hint="Description"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/barbershopET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="Please choose barbershop"
+                        android:textSize="15sp"
+                        android:visibility="invisible"/>
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+                    </Spinner>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/spinner"
+                        android:background="#888"/>
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/fbLinkET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:hint="Facebook Profile Link"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/instagramLinkET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:hint="Instagram Profile Link"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/twtLinkET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:hint="Twitter Profile Link"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/maleOpt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Male"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <RadioButton
+                        android:id="@+id/femaleOpt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Female"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14sdp" />
+                </RadioGroup>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <!-- Loading progress -->
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

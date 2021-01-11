@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.odelan.qwork.ui.activity.intro.SignupActivity">
+
+    <!-- Top Bar -->
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/view_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:visibility="gone" />
+
+    <!-- Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_bar">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_splash" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_title" />
+
+            <EditText
+                android:id="@+id/emailET"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:background="@drawable/input_background"
+                android:gravity="center_vertical"
+                android:hint="Email"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_hint"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/passwordET"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/input_background"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_hint" />
+
+            <EditText
+                android:id="@+id/confirmPasswordET"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/input_background"
+                android:gravity="center_vertical"
+                android:hint="Confirm Password"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_hint"
+                android:inputType="textPassword"
+                android:fontFamily="sans-serif" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/mobileNumET"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="@drawable/input_background"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Mobile number"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/text_hint"
+                    android:fontFamily="sans-serif" />
+                <Button
+                    android:id="@+id/sendBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/signup_btn_background"
+                    android:text="Send"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="(Please start with country code first. i.e 44 for uk instead of the first 0)"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/checkCodeET"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/input_background"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:hint="Verify Code"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_hint" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:id="@+id/cust_type"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/barbershopOpt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:buttonTint="@color/white"
+                        android:text="Shop Owner"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <RadioButton
+                        android:id="@+id/barberOpt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:buttonTint="@color/white"
+                        android:text="Barber"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <RadioButton
+                        android:id="@+id/customerOpt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/white"
+                        android:text="Customer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/signupBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_43sdp"
+                    android:background="@drawable/signup_btn_background"
+                    android:text="Sign up"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_17sdp" />
+
+                <Button
+                    android:id="@+id/loginBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_43sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/login_btn_background"
+                    android:text="Back"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_17sdp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+        </ScrollView>-->
+    </RelativeLayout>
+
+    <!-- Loading progress -->
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

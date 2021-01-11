@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.odelan.qwork.ui.activity.main.barber.B_HomeActivity"
+    tools:showIn="@layout/app_bar_b__home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/include"
+        android:layout_toEndOf="@+id/include">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9.5"
+            android:background="@drawable/barbar_profile_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#009291"
+                android:alpha="0.5"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent">
+
+                        <ImageView
+                            android:id="@+id/refreshIV"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:src="@drawable/refresh_back" />
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+                <TextView
+                    android:id="@+id/titleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="HOME"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:id="@+id/photoIV"
+                    android:src="@drawable/ic_user"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="45dp"
+                    app:riv_corner_radius="@dimen/_40sdp"
+                    app:riv_border_width="2dp"
+                    app:riv_border_color="#333333"
+                    app:riv_oval="true" />
+                <!--app:riv_mutate_background="true"
+                app:riv_tile_mode="repeat"-->
+
+
+                <TextView
+                    android:id="@+id/barbershopNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Barber Shop Name"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/timePerCutTVText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="#7C7C7C"
+                        android:text="Time Per Cut"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/timePerCutTV"
+                        android:layout_toEndOf="@+id/timePerCutTVText"
+                        android:layout_width="60dp"
+                        android:background="@color/white"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=" 0min"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ratingLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:orientation="vertical">
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:id="@+id/ratingBar"
+                        style="@style/Widget.MaterialRatingBar.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="0"
+                        app:mrb_progressBackgroundTint="@color/rating_bar_color"
+                        app:mrb_progressTint="@color/rating_bar_color"
+                        app:mrb_secondaryProgressTint="@color/rating_bar_color" />
+
+                    <TextView
+                        android:id="@+id/ratingTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:gravity="center_vertical"
+                        android:text="(0.0)"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/fbIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:src="@drawable/fb_btn_background1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/instagramIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:src="@drawable/instagram_btn_background1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/twtIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:src="@drawable/twt_btn_background1" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="Current Queue"
+                    android:textColor="#7C7C7C"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/queueCountTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="(0)"
+                    android:textColor="#7C7C7C"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/onlineStatusIV"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:src="#568536"
+                    app:civ_border_color="#568536"
+                    app:civ_border_width="0dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/addTV"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:clickable="true"
+                    android:gravity="end|center_vertical"
+                    android:text="Add"
+                    android:visibility="gone"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/waitTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical">
+
+                <com.odelan.qwork.widget.HorizontalListView
+                    android:id="@+id/hListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/addToQueueBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_join_queue"
+                    android:text="Add To Queue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/openBtn"
+                    android:layout_width="140dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_close_queue"
+                    android:text="Close Queue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Loading progress -->
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/include" />
+</RelativeLayout>

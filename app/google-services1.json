@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "170760775221",
+    "project_id": "firebase-qwork"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170760775221:android:02813ea6dcc15f1d",
+        "android_client_info": {
+          "package_name": "com.odelan.qwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170760775221-gbh4erv0j0vo1cd2ljeh0r62j6oqg913.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.odelan.qwork",
+            "certificate_hash": "b697296363bc361560b1326a97affeedd208fb06"
+          }
+        },
+        {
+          "client_id": "170760775221-svrt2ja1ocosk2o4ldp7qmfcc3flpvah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRVHjT6G5NiCe6qjQlvuiDEE4PoQludI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

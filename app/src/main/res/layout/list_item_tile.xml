@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.odelan.qwork.widget.SquareRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_1sdp"
+    android:background="@android:color/transparent"
+    tools:context="com.odelan.qwork.ui.activity.main.ImagesActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/iv"/>
+
+    <ImageView
+        android:id="@+id/markIV"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_check"/>
+
+</com.odelan.qwork.widget.SquareRelativeLayout>

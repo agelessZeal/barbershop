@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/top_bar">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/googleMap"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/searchArea"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/seperator">
+
+        <EditText
+            android:id="@+id/searchET"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/round_background"
+            android:drawableStart="@drawable/ic_search_small"
+            android:drawablePadding="5dp"
+            android:hint="Search"
+            android:imeOptions="actionDone"
+            android:lines="1"
+            android:paddingStart="7dp"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <!--
+    <RelativeLayout
+        android:id="@+id/joinStatusLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/barberNameTV">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/photoIV"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:clickable="true"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/ic_user"
+                    app:civ_border_color="#FFFF0000"
+                    app:civ_border_width="0dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/photoIV">
+
+                    <TextView
+                        android:id="@+id/orderTV"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/round_textview_background"
+                        android:gravity="center"
+                        android:layout_marginTop="7dp"
+                        android:textColor="#33dd33"
+                        android:textSize="15sp"
+                        android:padding="4dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/curQueTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/orderTV"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="3dp"
+                        android:text="Queue length"
+                        android:textColor="#2222EE"
+                        android:textSize="13dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/photoIV">
+
+                    <TextView
+                        android:id="@+id/timeTV"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/round_textview_background"
+                        android:gravity="center"
+                        android:textColor="#33dd33"
+                        android:textSize="15sp"
+                        android:padding="4dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/barberNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_horizontal"
+                android:padding="3dp"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/tabView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bg_favourite"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tabTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="You are Queuing"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Distance:"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    android:id="@+id/tvDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14dp"
+                    android:text="-" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.8"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/car"
+                        android:scaleType="centerInside"/>
+
+                    <TextView android:id="@+id/tvCartime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textSize="13dp"
+                        android:text="-" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/bicycle"
+                        android:scaleType="centerInside"/>
+
+                    <TextView android:id="@+id/tvBicycletime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textSize="13dp"
+                        android:text="-" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/walking"
+                        android:scaleType="centerInside"/>
+
+                    <TextView android:id="@+id/tvWalktime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textSize="13dp"
+                        android:text="-" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_background"
+            android:text="Leave Queue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/joinStatusLL"
+        android:layout_below="@+id/searchArea"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone" />
+
+    Loading progress
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+
+    <RelativeLayout
+        android:id="@+id/joinStatusLL"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight=".25">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/photoIV"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_user"
+                        app:civ_border_color="#FFFF0000"
+                        app:civ_border_width="0dp" />
+
+                    <TextView
+                        android:id="@+id/barberNameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/photoIV"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:padding="3dp"
+                        android:text="Test"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/curQueTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="3dp"
+                        android:text="Queue length"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
+
+
+                    <TextView
+                        android:id="@+id/orderTV"
+                        android:layout_width="100dp"
+                        android:layout_height="32dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/round_textview_background"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/curQueTV"
+                        android:textColor="#00A5FF"
+                        android:textSize="15sp"
+                        android:text="0"/>
+
+                    <TextView
+                        android:id="@+id/timeTV"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="32dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/orderTV"
+                        android:background="@drawable/round_textview_background"
+                        android:gravity="center"
+                        android:textColor="#00A5FF"
+                        android:textSize="15sp"
+                        android:text="0 min"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/rl_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Distance:"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"/>
+
+                        <TextView
+                            android:id="@+id/tvDistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:text="131 KM"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rl_car"
+                        android:layout_below="@+id/rl_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="3dp"
+                        android:layout_centerHorizontal="true">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/car"
+                            android:scaleType="centerInside"
+                            android:tint="@color/white"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <TextView android:id="@+id/tvCartime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:textColor="@color/white"
+                            android:text="1 hour 47 mins" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rl_bycycle"
+                        android:layout_below="@+id/rl_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="3dp"
+                        android:layout_centerHorizontal="true">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/bicycle"
+                            android:scaleType="centerInside"
+                            android:tint="@color/white"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <TextView android:id="@+id/tvBicycletime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:textColor="@color/white"
+                            android:text="1 hour 47 mins" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rl_walk"
+                        android:layout_below="@+id/rl_bycycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="3dp"
+                        android:layout_centerHorizontal="true">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/walking"
+                            android:scaleType="centerInside"
+                            android:tint="@color/white"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <TextView android:id="@+id/tvWalktime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:textColor="@color/white"
+                            android:text="1 hour 47 mins" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tabView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bg_favourite"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tabTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="You are Queuing"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/btn_background"
+            android:text="Leave Queue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/joinStatusLL"
+        android:layout_below="@+id/searchArea"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"/>
+
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.odelan.qwork.ui.activity.main.customer.C_HomeActivity"
+        tools:showIn="@layout/app_bar_c__home">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.odelan.qwork.ui.activity.main.customer.C_HomeActivity" />
+
+    </android.support.constraint.ConstraintLayout>
+    -->

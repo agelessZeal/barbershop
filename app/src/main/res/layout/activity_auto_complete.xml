@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.odelan.qwork.widget.google_place_api.AutoComplete">
+
+    <!-- Top Bar -->
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/view_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:visibility="visible" />
+
+    <!-- Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_bar">
+
+        <RelativeLayout
+            android:id="@+id/seperator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#aaa"/>
+
+        <RelativeLayout
+            android:id="@+id/searchArea"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/seperator"
+            android:background="@color/colorPrimary">
+
+            <AutoCompleteTextView
+                android:id="@+id/autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/round_background"
+                android:paddingStart="7dp"
+                android:drawableStart="@drawable/ic_search_small"
+                android:drawablePadding="5dp"
+                android:hint="Search address"
+                android:textSize="13sp"/>
+        </RelativeLayout>
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/googleMap"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchArea" />
+    </RelativeLayout>
+
+    <!-- Loading progress -->
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
+

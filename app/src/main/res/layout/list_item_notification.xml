@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.odelan.qwork.ui.activity.intro.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_65sdp">
+
+        <RelativeLayout
+            android:id="@+id/photoArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/photoIV"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/ic_user"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="0dp" />
+
+            <ImageView
+                android:id="@+id/markIV"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/usernameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/photoArea"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textSize="10sp" />
+    </RelativeLayout>
+</RelativeLayout>

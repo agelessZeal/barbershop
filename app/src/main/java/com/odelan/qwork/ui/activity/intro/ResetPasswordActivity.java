@@ -1,0 +1,90 @@
+package com.odelan.qwork.ui.activity.intro;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.EditText;
+
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.odelan.qwork.MyApplication;
+import com.odelan.qwork.R;
+import com.odelan.qwork.ui.base.BaseActivity;
+import com.odelan.qwork.utils.ValidationUtils;
+
+import org.json.JSONObject;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class ResetPasswordActivity extends BaseActivity {
+
+    public static String email = null;
+    @BindView(R.id.passwordET)
+    EditText passwordET;
+
+    @BindView(R.id.confirmPasswordET)
+    EditText confirmPasswordET;
+
+    @BindView(R.id.codeET)
+    EditText codeET;
+
+    ValidationUtils validationUtils;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_reset_password);
+
+        mContext = this;
+        ButterKnife.bind(this);
+
+        validationUtils = new ValidationUtils(mContext);
+        hideTitleIV();
+        showTitle();
+        setTitle("Reset Password");
+    }
+
+    @OnClick(R.id.sendBtn) public void onSend() {
+        if(validationUtils.checkResetPassValid(passwordET, confirmPasswordET, codeET)) {
+            showSecondaryCustomLoadingView();
+            AndroidNetworking.post(MyApplication.BASE_URL + "user/reset_password")
+                    .addBodyParameter("email", email)
+                    .addBodyParameter("password", passwordET.getText().toString())
+                    .addBodyParameter("code", codeET.getText().toString())
+                    .setTag("reset_password")
+                    .setPriority(Priority.MEDIUM)
+                    .build()
+                    .getAsJSONObject(new JSONObjectRequestListener() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // do anything with response
+                            hideCustomLoadingView();
+                            try {
+                                String status = response.getString("status");
+                                if(status.equals("1")) {
+                                    showToast("Password changed");
+                                    startActivity(new Intent(mContext, LoginActivity.class));
+                                    finish();
+                                } else if (status.equals("0")) {
+                                    showToast(response.getString("error"));
+                                } else {
+                                    showToast("Network Error!");
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                showToast("Network Error!");
+                            }
+                        }
+                        @Override
+                        public void onError(ANError error) {
+                            // handle error
+                            hideCustomLoadingView();
+                            showToast(error.getErrorBody().toString());
+                        }
+                    });
+        }
+    }
+}

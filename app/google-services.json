@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "708963559576",
+    "firebase_url": "https://qwork-android.firebaseio.com",
+    "project_id": "qwork-android",
+    "storage_bucket": "qwork-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708963559576:android:02813ea6dcc15f1d",
+        "android_client_info": {
+          "package_name": "com.odelan.qwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708963559576-fvd6ml4uvh6ahknc938naon90pl2dfuu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.odelan.qwork",
+            "certificate_hash": "dd460cc56ebd029c217d141b08ac8f0d8f193a6e"
+          }
+        },
+        {
+          "client_id": "708963559576-5gibp54u3doev0eoc9dqujj3eumqqtvl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.odelan.qwork",
+            "certificate_hash": "7c71cd0e5e71663353ee29e630548268f4e039e4"
+          }
+        },
+        {
+          "client_id": "708963559576-jn3gn5uf3qvjoqupvpa0iuh44ono7agm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCcJX3lqdqcnm549lVOMyxmySDi26kVLs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708963559576-jn3gn5uf3qvjoqupvpa0iuh44ono7agm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

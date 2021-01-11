@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">BarberQ</string>
+    <string name="facebook_app_id">1264331286968308</string>
+    <!--<string name="facebook_app_id_test">1264331286968308</string>-->
+    <!--<string name="facebook_app_id">1264331286968308</string>-->
+    <!--<string name="fb_login_protocol_scheme">fb1264331286968308</string>-->
+    <!--<string name="facebook_app_id_test">455631174804659</string>-->
+    <!--<string name="facebook_app_id">1993150447572438</string>-->
+
+    <string name="title_activity_c__home">C_HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_b__home">B_HomeActivity</string>
+    <string name="title_activity_bs__home">BS_HomeActivity</string>
+    <string name="title_activity_c__profile">C_ProfileActivity</string>
+    <string name="title_activity_b__profile">B_ProfileActivity</string>
+    <string name="title_activity_bs__profile">BS_ProfileActivity</string>
+    <string name="title_activity_bs__request_list">BS_RequestListActivity</string>
+    <string name="title_activity_c__history">C_HistoryActivity</string>
+    <string name="title_activity_c__contact">C_ContactActivity</string>
+    <string name="title_activity_bs__contact">BS_ContactActivity</string>
+    <string name="title_activity_b__contact">B_ContactActivity</string>
+    <string name="title_activity_b__notification">B_NotificationActivity</string>
+    <string name="title_activity_bs__notification">BS_NotificationActivity</string>
+    <string name="barberemailtxt">Input your barber\'s name \n and email to generate \n their account</string>
+    <string name="barberbottomtxt">Their login details will then \n be emailed to them</string>
+    <string name="custsignedTv">Customers Signed up</string>
+    <string name="whenTv">When you hit</string>
+    <string name="offercountTv">Customers</string>
+    <string name="targetTv">BarberQ will begin target marketing for your shop</string>
+    <string name="readmoreTV">Read More</string>
+    <string name="signedupcountTV"> customers recommended  \n signed up before opening your queues</string>
+    <string name="openq">Open Queues</string>
+    <string name="date">Per day to go live</string>
+    <string name="marketing">Marketing</string>
+</resources>

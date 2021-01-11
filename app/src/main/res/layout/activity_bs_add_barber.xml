@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C0000000">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+  android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="@dimen/_5sdp"
+    android:background="@drawable/barberqback"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/close"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/_15sdp"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/barberemailtxt"
+        android:textSize="@dimen/_20sdp"
+        android:gravity="center"
+        android:fontFamily="sans-serif"
+        android:id="@+id/title"
+        android:textColor="#000" />
+    <EditText
+        android:id="@+id/namrBarber"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/title"
+        android:background="@drawable/input_background"
+        android:gravity="center_vertical"
+        android:hint="Barber Name"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorBlack" />
+    <EditText
+        android:id="@+id/emailBarber"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/namrBarber"
+        android:background="@drawable/input_background"
+        android:gravity="center_vertical"
+        android:hint="Email Barber"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorBlack" />
+
+    <Button
+        android:id="@+id/createBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_46sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@id/emailBarber"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Create Barber"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_17sdp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/barberbottomtxt"
+        android:textSize="@dimen/_16sdp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="sans-serif"
+        android:layout_below="@+id/createBTN"
+        android:id="@+id/bottomtitle"
+        android:textColor="#000" />
+    </RelativeLayout></RelativeLayout>
+
+</LinearLayout>

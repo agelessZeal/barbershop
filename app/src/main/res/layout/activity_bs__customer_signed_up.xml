@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="55dp"
+    android:background="@drawable/back_splash"
+    tools:context=".ui.activity.main.barbershop.BS_CustomerSignedUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/custsignedTv"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:textSize="@dimen/_14sdp"
+            android:id="@+id/toptitle"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/CustomerRecomCountTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/signedupcountTV"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            tools:ignore="MissingConstraints" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/marketing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="170dp"
+                    android:text=""
+                    android:gravity="end"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="MissingConstraints" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:layout_marginTop="50dp"
+                    android:text=""
+                    android:id="@+id/openq"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="170dp"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="250dp"
+                android:id="@+id/openmark"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="280dp"
+                    android:rotation="270"
+                    android:orientation="horizontal"
+                    android:layout_weight="5.3"
+                    >
+
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_gravity="center_vertical"
+    android:layout_weight="1.5"
+    android:layout_height="80dp">
+                    <com.beardedhen.androidbootstrap.BootstrapProgressBar
+                        android:id="@+id/progress1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        app:bootstrapBrand="info"
+                        app:bootstrapMaxProgress="100"
+                        android:layout_marginEnd="2dp"
+                        app:striped="true" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:text=""
+        android:id="@+id/percentagebt"
+        android:rotation="90"
+        android:textSize="@dimen/_17sdp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginEnd="70dp"
+        android:id="@+id/count"
+        android:rotation="90"
+        android:textSize="@dimen/_12sdp"
+        android:text=""
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginEnd="114dp"
+        android:id="@+id/customer"
+        android:rotation="90"
+        android:textSize="@dimen/_9sdp"
+        android:text=""
+        android:layout_height="match_parent" />
+</RelativeLayout>
+                      <RelativeLayout
+                          android:layout_gravity="center_vertical"
+                          android:layout_width="0dp"
+                          android:layout_weight=".5"
+                          android:layout_height="80dp">
+
+                    <com.beardedhen.androidbootstrap.BootstrapProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"
+                        app:bootstrapBrand="info"
+                        app:bootstrapMaxProgress="100"
+                        app:striped="true" />
+
+                          <TextView
+                              android:layout_width="fill_parent"
+                              android:text=""
+                              android:id="@+id/percentagetop"
+                              android:textSize="@dimen/_17sdp"
+                              android:gravity="center"
+                              android:rotation="90"
+                              android:layout_height="match_parent" />
+                      </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:layout_marginEnd="1dp"
+            android:gravity="center"
+            android:text="@string/date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/whenTv"
+            android:textColor="@color/white"
+            android:id="@+id/whenhit"
+            android:textSize="@dimen/_14sdp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/offercountTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/offercountTv"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:id="@+id/willbegin"
+            android:text="@string/targetTv"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/green"
+            android:gravity="center"
+            android:id="@+id/readmore"
+            android:text="@string/readmoreTV"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_12sdp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
